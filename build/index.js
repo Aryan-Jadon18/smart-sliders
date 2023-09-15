@@ -2352,10 +2352,10 @@ function save({
     posts,
     currentIndex
   } = attributes;
-  if (!posts || !Array.isArray(posts) || posts.length === 0 || currentIndex < 0 || currentIndex >= posts.length) {
+  if (!posts || posts.length === 0) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-    }, 'No data available.');
+    }, __('No data available.', 'smart-sliders'));
   }
   const currentPost = posts[currentIndex];
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {

@@ -18,26 +18,25 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function save({ attributes }) {
     const { posts, currentIndex } = attributes;
 
-	if (!posts || !Array.isArray(posts) || posts.length === 0 || currentIndex < 0 || currentIndex >= posts.length) {
-		return (
-			<p { ...useBlockProps.save() }>
-				{ 'No data available.' }
-			</p>
-		);
-	}
+    if (!posts || posts.length === 0) {
+        return (
+            <p { ...useBlockProps.save() }>
+                {__('No data available.', 'smart-sliders')}
+            </p>
+        );
+    }
 
-	const currentPost = posts[currentIndex];
+    const currentPost = posts[currentIndex];
 
-	return (
-		<div { ...useBlockProps.save() } className="your-slideshow-container">
-			<h2>{currentPost.title.rendered}</h2>
-			<img
-				src={currentPost.jetpack_featured_media_url}
-				alt={currentPost.title.rendered}
-			/>
-			<p>{currentPost.date}</p>
-			<div dangerouslySetInnerHTML={{ __html: currentPost.content.rendered }} />
-			{/* You can access other data like categories, tags, etc. as needed */}
-		</div>
-	);
+    return (
+        <div { ...useBlockProps.save() } className="your-slideshow-container">
+            <h2>{currentPost.title.rendered}</h2>
+            <img
+                src={currentPost.jetpack_featured_media_url}
+                alt={currentPost.title.rendered}
+            />
+            <p>{currentPost.date}</p>
+            <div dangerouslySetInnerHTML={{ __html: currentPost.content.rendered }} />
+        </div>
+    );
 }
