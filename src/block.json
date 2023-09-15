@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/smart-sliders",
+	"version": "0.1.0",
+	"title": "Smart Sliders",
+	"category": "media",
+	"icon": "smiley",
+	"description": "Add smart slideshows that shows details of a post like headings, body, images, links etc..",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "smart-sliders",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
